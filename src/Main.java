@@ -126,8 +126,24 @@ public class Main {
         else System.out.println(NAME_NOT_EXIST);
     }
 
-    //TODO
-    private static void getName(Scanner in, ContactBook cBook) {}
+    private static void getName(Scanner in, ContactBook cBook) {
+        int phone;
+        phone = in.nextInt(); in.nextLine();
+        boolean found = false;
+        if (cBook.getNumberOfContacts() != 0){
+            cBook.initializeIterator();
+            while( cBook.hasNext() && !found) {
+                Contact c = cBook.next();
+                if(c.getPhone() == phone) {
+                    System.out.println(c.getName());
+                    found = true;
+                }
+            }
+            if (found == false)
+                System.out.println(NUMBER_NOT_EXISTS);
+        }
+        else System.out.println(NUMBER_NOT_EXISTS);
+    }
 
     //TODO
     private static void equalPhoneNumbers(ContactBook cBook){}
