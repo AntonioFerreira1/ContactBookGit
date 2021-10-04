@@ -15,6 +15,9 @@ public class Main {
     public static final String LIST_CONTACTS  = "LC";
     public static final String QUIT           = "Q";
 
+    public static final String GET_NAME = "GN";
+    public static final String EQUAL_PHONE = "EP";
+
     //Constantes que definem as mensagens para o utilizador
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
     public static final String NAME_NOT_EXIST = "contactBook.Contact does not exist.";
@@ -24,6 +27,10 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
+
+    public static final String NUMBER_NOT_EXISTS = "Phone number does not exist.";
+    public static final String DIFF_PHONE_NUMBERS = "All contacts have different phone numbers.";
+    public static final String EQUAL_PHONE_NUMBERS = "There are contacts that share phone numbers.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -52,6 +59,12 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
+                    break;
+                case GET_NAME:
+                    getName(in, cBook);
+                    break;
+                case EQUAL_PHONE:
+                    equalPhoneNumbers(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -113,6 +126,12 @@ public class Main {
         else System.out.println(NAME_NOT_EXIST);
     }
 
+    //TODO
+    private static void getName(Scanner in, ContactBook cBook) {}
+
+    //TODO
+    private static void equalPhoneNumbers(ContactBook cBook){}
+
     private static void setPhone(Scanner in, ContactBook cBook) {
         String name;
         int phone;
@@ -147,4 +166,6 @@ public class Main {
         }
         else System.out.println(BOOK_EMPTY);
     }
+
+
 }
