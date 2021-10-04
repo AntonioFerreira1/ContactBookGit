@@ -146,7 +146,10 @@ public class Main {
     }
 
     //TODO
-    private static void equalPhoneNumbers(ContactBook cBook){}
+    private static void equalPhoneNumbers(ContactBook cBook){
+        if(cBook.verifyRepeatedPhones()) {System.out.println(EQUAL_PHONE_NUMBERS);}
+        else {System.out.println(DIFF_PHONE_NUMBERS);}
+    }
 
     private static void setPhone(Scanner in, ContactBook cBook) {
         String name;
